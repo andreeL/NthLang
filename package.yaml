@@ -1,0 +1,37 @@
+name:                NthLang
+version:             0.1.0.0
+github:              "githubuser/NthLang"
+license:             OtherLicense
+author:              Andrée Lindgren
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  NthLang-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - NthLang
+
+tests:
+  NthLang-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - NthLang
